@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.css">        
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    </head>
+    <body ng-controller="hoursCtrl">
+    <div class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">          
+          <a class="navbar-brand text-center" href="#">Hourly Timesheet Calculator</a>
+        </div>
+      </div>      
+    </div>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">        
+        <h2 class="text-center">You have worked for <span class="text-success">{{totalHours()}}</span> Hours</h2>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="bs-docs-section">
+        <div class="row">
+          <div class="form-inputs col-lg-6 col-md-6 col-sm-8 col-xs-12">
+            <div class="well">
+               <ol class="unstyled">
+                  <li class="form-group" ng-repeat="task in tasks">
+                     <div class="input-group">
+                        <span class="input-group-addon text-success">Task {{tasks.indexOf(task)}}</span>
+                        <input ng-model="task.time" class="form-control" autofocus/>
+                        <span class="input-group-btn">
+                           <button type="button" class="btn btn-danger" ng-click="remove($index)">- Remove</button>
+                        </span>                        
+                     </div>
+                  </li>                  
+               </ol>
+               <form>
+                  <div class="form-group">
+                     <div class="input-group">
+                        <span class="input-group-addon text-success">New Task</span>
+                        <input type="text" ng-model="newTaskHours" class="form-control" />
+                        <span class="input-group-btn">
+                           <button type="button" class="btn btn-primary" ng-click ="addTask()">+ Add</button>
+                        </span>
+                     </div>
+                  </div>
+               </form>
+               <div class="clearfix">
+                  <div class="pull-right">
+                     <button class="btn btn-default" ng-click="reset()">Reset</button>
+                  </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+      <hr />
+
+      <footer class="container">
+        <small>A simple web project to implement angularjs by <a href="http://sharmikthakar.com">Sharmik Thakar</a></small>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/hours.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
