@@ -5,7 +5,8 @@ dl,dt,dd,menu,ol,ul,li {margin: 0;list-style:none;list-style-image: none;padding
 .clearfix:before,.clearfix:after {content: " ";display: table;}
 .clearfix:after {clear: both;}
 .clearfix {*zoom: 1;}
-
+body{padding:0 0 10px 0}
+.hourStatus{height:26px;}
 
 
 

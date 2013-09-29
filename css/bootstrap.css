@@ -4251,7 +4251,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
   position: relative;
   z-index: 1000;
   min-height: 50px;
-  margin-bottom: 21px;
   border: 1px solid transparent;
 }
 
@@ -5273,7 +5272,7 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
-  padding: 30px;
+  padding: 15px;
   margin-bottom: 30px;
   font-size: 22.5px;
   font-weight: 200;
@@ -5293,20 +5292,6 @@ a.list-group-item.active > .badge,
 
 .container .jumbotron {
   border-radius: 0;
-}
-
-@media screen and (min-width: 768px) {
-  .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-  .container .jumbotron {
-    padding-right: 60px;
-    padding-left: 60px;
-  }
-  .jumbotron h1 {
-    font-size: 67.5px;
-  }
 }
 
 .thumbnail {

@@ -11,29 +11,34 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
     </head>
     <body ng-controller="hoursCtrl">
     <div class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">          
-          <a class="navbar-brand text-center" href="#">Hourly Timesheet Calculator</a>
+          <a class="navbar-brand text-center" href="#"><i class="icon-lightbulb"></i> Hourly Timesheet Calculator</a>
         </div>
       </div>      
     </div> <!-- navbar -->
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">        
-        <h3 class="text-center">You have worked for <span class="text-info">{{totalHours()}}</span> Hours</h3>
+        <h3 class="text-center">You have worked for <span class="text-info"><strong>{{totalHours()}}</strong></span> Hours.</h3>
+        <h4 class="text-center hourStatus" ng-bind-html-unsafe="getStatus()"></h4>
       </div>
     </div> <!-- jumbotron -->
     
     <div class="container">
       <div class="bs-docs-section">
         <div class="row">
-           <div class="form-inputs col-lg-6 col-md-6 col-sm-8 col-xs-12">
+           <div class="form-inputs col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="well">
-               <h4 class="text-center">Add minutes in multiples of 0.25</h4>
+               <div class="form-group">
+                  <div class="input-group">
+                     <span class="input-group-addon text-primary">Hours to be completed?</span>
+                     <input type="number" ng-model="targetHrs" class="form-control" />
+                  </div>
+               </div>
                <ol class="unstyled">
                   <li class="form-group" ng-repeat="task in tasks">
                      <div class="input-group">
@@ -45,7 +50,7 @@
                      </div>                     
                   </li>                  
                </ol> <!-- ordered list -->
-               <hr />
+               <hr />              
                <form>
                   <div class="form-group">
                      <div class="input-group">
@@ -62,14 +67,16 @@
                </div> <!-- reset button -->
             </div> <!-- well -->
            </div> <!-- left column -->
-           <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <h5><strong>Tips and Tricks!</strong></h5>            
             <div class="panel panel-primary">
-               <div class="panel-heading text-center"><i class="icon-info-sign"></i> How to calculate minutes in multiples of 0.25</div>
-               <ul class="panel-body text-center">
-                  <li><i class="icon-hand-right"></i> <span class="text-primary">15 minutes</span> equals to <strong>0.25</strong></li>
-                  <li><i class="icon-hand-right"></i> <span class="text-primary">30 minutes</span> equals to <strong>0.50</strong></li>
-                  <li><i class="icon-hand-right"></i> <span class="text-primary">45 minutes</span> equals to <strong>0.75</strong></li>
-                  <li><i class="icon-hand-right"></i> <span class="text-primary">60 minutes</span> equals to <strong>1.00</strong></li>
+               <div class="panel-heading"><i class="icon-info-sign"></i> How to calculate minutes in multiples of 0.25</div>               
+               <ul class="panel-body">
+                  <li><h5 class="">To accurately calculate time, add the minutes in multiples of 0.25</h5></li>
+                  <li class="container"><i class="icon-hand-right"></i> <span class="text-info">15 minutes</span> equals to <strong>0.25</strong></li>
+                  <li class="container"><i class="icon-hand-right"></i> <span class="text-info">30 minutes</span> equals to <strong>0.50</strong></li>
+                  <li class="container"><i class="icon-hand-right"></i> <span class="text-info">45 minutes</span> equals to <strong>0.75</strong></li>
+                  <li class="container"><i class="icon-hand-right"></i> <span class="text-info">60 minutes</span> equals to <strong>1.00</strong></li>
                </ul>
             </div> <!-- panel -->
            </div> <!-- right col -->
@@ -80,9 +87,11 @@
     </div> <!-- /container -->
 
       <footer class="container">
-        <small>A simple web project to implement angularjs by <a class="text-success" href="http://sharmikthakar.com">Sharmik Thakar</a></small>
+        <p>A simple web project to implement angularjs by <a class="text-primary" href="http://sharmikthakar.com"><strong>Sharmik Thakar</strong></a></p>
       </footer>
-    
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/hours.js"></script>
     </body>
