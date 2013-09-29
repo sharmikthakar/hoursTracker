@@ -5,7 +5,7 @@ function hoursCtrl($scope){
    ]
    
    $scope.addTask = function(){
-      if ($scope.newTaskHours == undefined){
+      if (($scope.newTaskHours == undefined) || ($scope.newTaskHours == 0)){
          alert("Enter a Non Zero value");
       }
       else{

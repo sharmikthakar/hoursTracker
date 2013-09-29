@@ -35,7 +35,7 @@
                <ol class="unstyled">
                   <li class="form-group" ng-repeat="task in tasks">
                      <div class="input-group">
-                        <span class="input-group-addon text-success">Task {{tasks.indexOf(task)}}</span>
+                        <span class="input-group-addon">Task {{tasks.indexOf(task)}}</span>
                         <input ng-model="task.time" class="form-control" autofocus/>
                         <span class="input-group-btn">
                            <button type="button" class="btn btn-danger" ng-click="remove($index)">- Remove</button>
@@ -46,7 +46,7 @@
                <form>
                   <div class="form-group">
                      <div class="input-group">
-                        <span class="input-group-addon text-success">New Task</span>
+                        <span class="input-group-addon">New Task</span>
                         <input type="text" ng-model="newTaskHours" class="form-control" />
                         <span class="input-group-btn">
                            <button type="button" class="btn btn-primary" ng-click ="addTask()">+ Add</button>
