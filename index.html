@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Hourly Timesheet Calculator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-        <link rel="stylesheet" href="css/bootstrap.css">        
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" />        
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -19,18 +20,18 @@
           <a class="navbar-brand text-center" href="#">Hourly Timesheet Calculator</a>
         </div>
       </div>      
-    </div>
+    </div> <!-- navbar -->
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">        
         <h3 class="text-center">You have worked for <span class="text-info">{{totalHours()}}</span> Hours</h3>
       </div>
-    </div>
+    </div> <!-- jumbotron -->
     
     <div class="container">
       <div class="bs-docs-section">
         <div class="row">
-          <div class="form-inputs col-lg-6 col-md-6 col-sm-8 col-xs-12">
+           <div class="form-inputs col-lg-6 col-md-6 col-sm-8 col-xs-12">
             <div class="well">
                <h4 class="text-center">Add minutes in multiples of 0.25</h4>
                <ol class="unstyled">
@@ -39,11 +40,11 @@
                         <span class="input-group-addon">Task {{tasks.indexOf(task) + 1}}</span>
                         <input type="number" min="0.25" ng-model="task.time" class="form-control" required="" autofocus/>
                         <span class="input-group-btn">
-                           <button type="button" class="btn btn-danger" ng-click="remove($index)">-</button>
+                           <button type="button" class="btn btn-danger" ng-click="remove($index)"><i class="icon-remove"></i></button>
                         </span>                        
                      </div>                     
                   </li>                  
-               </ol>
+               </ol> <!-- ordered list -->
                <hr />
                <form>
                   <div class="form-group">
@@ -51,30 +52,36 @@
                         <span class="input-group-addon">Add Task</span>
                         <input type="number" ng-model="newTaskHours" class="form-control" />
                         <span class="input-group-btn">
-                           <button type="button" class="btn btn-primary" ng-click ="addTask()">+ </button>
+                           <button type="button" class="btn btn-primary" ng-click ="addTask()"><i class="icon-plus"></i></button>
                         </span>
                      </div>
-                  </div>
-               </form>
+                  </div> <!-- form-group -->
+               </form> <!-- add form -->
                <div>
-                  <button class="btn btn-default btn-block" ng-click="reset()">Reset</button>
-               </div>
-               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
-      
-    </div>
+                  <button class="btn btn-default btn-block" ng-click="reset()"><i class="icon-trash"></i> Reset</button>
+               </div> <!-- reset button -->
+            </div> <!-- well -->
+           </div> <!-- left column -->
+           <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+            <div class="panel panel-primary">
+               <div class="panel-heading text-center"><i class="icon-info-sign"></i> How to calculate minutes in multiples of 0.25</div>
+               <ul class="panel-body text-center">
+                  <li><i class="icon-hand-right"></i> <span class="text-primary">15 minutes</span> equals to <strong>0.25</strong></li>
+                  <li><i class="icon-hand-right"></i> <span class="text-primary">30 minutes</span> equals to <strong>0.50</strong></li>
+                  <li><i class="icon-hand-right"></i> <span class="text-primary">45 minutes</span> equals to <strong>0.75</strong></li>
+                  <li><i class="icon-hand-right"></i> <span class="text-primary">60 minutes</span> equals to <strong>1.00</strong></li>
+               </ul>
+            </div> <!-- panel -->
+           </div> <!-- right col -->
+          </div> <!-- row -->
+      </div> <!-- section -->
 
       <hr />
+    </div> <!-- /container -->
 
       <footer class="container">
         <small>A simple web project to implement angularjs by <a class="text-success" href="http://sharmikthakar.com">Sharmik Thakar</a></small>
       </footer>
-    </div> <!-- /container -->
     
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/hours.js"></script>
