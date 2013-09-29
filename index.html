@@ -23,7 +23,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">        
-        <h2 class="text-center">You have worked for <span class="text-success">{{totalHours()}}</span> Hours</h2>
+        <h2 class="text-center">You have worked for <span class="text-info">{{totalHours()}}</span> Hours</h2>
       </div>
     </div>
     
@@ -32,32 +32,33 @@
         <div class="row">
           <div class="form-inputs col-lg-6 col-md-6 col-sm-8 col-xs-12">
             <div class="well">
+               <h4>Add hours in multiples of 25.</h4>
                <ol class="unstyled">
                   <li class="form-group" ng-repeat="task in tasks">
                      <div class="input-group">
-                        <span class="input-group-addon">Task {{tasks.indexOf(task)}}</span>
+                        <span class="input-group-addon">Task {{tasks.indexOf(task) + 1}}</span>
                         <input ng-model="task.time" class="form-control" autofocus/>
                         <span class="input-group-btn">
-                           <button type="button" class="btn btn-danger" ng-click="remove($index)">- Remove</button>
+                           <button type="button" class="btn btn-danger" ng-click="remove($index)">-</button>
                         </span>                        
-                     </div>
+                     </div>                     
                   </li>                  
                </ol>
+               <hr />
                <form>
                   <div class="form-group">
                      <div class="input-group">
-                        <span class="input-group-addon">New Task</span>
+                        <span class="input-group-addon">Add Task</span>
                         <input type="text" ng-model="newTaskHours" class="form-control" />
                         <span class="input-group-btn">
-                           <button type="button" class="btn btn-primary" ng-click ="addTask()">+ Add</button>
+                           <button type="button" class="btn btn-primary" ng-click ="addTask()">+ </button>
                         </span>
                      </div>
                   </div>
                </form>
-               <div class="clearfix">
-                  <div class="pull-right">
-                     <button class="btn btn-default" ng-click="reset()">Reset</button>
-                  </div>
+               <div>
+                  <button class="btn btn-default btn-block" ng-click="reset()">Reset</button>
+               </div>
                </div>
             </div>
           </div>
@@ -71,19 +72,11 @@
       <hr />
 
       <footer class="container">
-        <small>A simple web project to implement angularjs by <a href="http://sharmikthakar.com">Sharmik Thakar</a></small>
+        <small>A simple web project to implement angularjs by <a class="text-success" href="http://sharmikthakar.com">Sharmik Thakar</a></small>
       </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-
+    </div> <!-- /container -->
+    
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/hours.js"></script>
-
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
     </body>
 </html>
