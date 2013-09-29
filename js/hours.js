@@ -36,7 +36,7 @@ function hoursCtrl($scope){
          return "You need <span class='text-info'><strong>"+rem+"</strong></span> more hours to reach <strong class='text-warning'>"+$scope.targetHrs+"</strong> Hours";
       }
       if (rem < 0 ){
-         return 'Too many hours reduce by '+rem*-1+ ' Hours';
+         return 'Too many hours reduce time by <strong class="text-danger">'+rem*-1+ '</strong> Hours';
       }
       if (rem == 0){
          return "<span class='text-success'>Bingo! you have compelted <strong class='text-success'>"+$scope.targetHrs+"</strong> hours today."
